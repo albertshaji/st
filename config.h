@@ -96,24 +96,24 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
- "#222222", /* black */
- "#c84444", /* red */
- "#55c452", /* green */
- "#d79921", /* orange */
- "#458588", /* blue */
- "#b16286", /* magenta */
- "#689d6a", /* green shade */
- "#a89984", /* brown grey */
+	"#222",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
-   /* 8 bright colors */
- "#928374", /* brown grey */
- "#fb4934", /* red  */
- "#83bf15", /* green */
- "#fabd2f", /* yellow */
- "#83a598", /* blue */
- "#d3869b", /* magenta */
- "#8ec07c", /* green shade*/
- "#bbbbbb", /* white */
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"#bbb",
 };
 
 
@@ -179,7 +179,7 @@ static MouseShortcut mshortcuts[] = {
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
-#define TERMMOD (ControlMask)
+#define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -190,9 +190,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_c,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_v,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_y,           selpaste,       {.i =  0} },
+	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
